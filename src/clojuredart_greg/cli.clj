@@ -7,7 +7,7 @@
   [data]
   ;; returning nil means no changes to options data
   (println "data-fn returning nil")
-  nil)
+  "something")
 
 (defn template-fn
   "Example template-fn handler.
