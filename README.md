@@ -1,10 +1,9 @@
 # clojuredart-greg/cli
 
-FIXME: my new template.
+A deps.edn template to generate a clojuredart cli app
 
 ## Usage
 
-FIXME: write usage documentation!
 
 This is a template project for use with [deps-new](https://github.com/seancorfield/deps-new).
 As originally generated, it will produce a new library project when run:

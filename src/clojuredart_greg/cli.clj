@@ -1,4 +1,7 @@
-(ns clojuredart-greg.cli)
+(ns clojuredart-greg.cli
+(:require [clojure.tools.build.api :as b]
+;  [deps-deploy.deps-deploy :as dd])
+))
 
 (defn data-fn
   "Example data-fn handler.
@@ -7,7 +10,7 @@
   [data]
   ;; returning nil means no changes to options data
   (println "data-fn returning nil")
-  "something")
+  nil)
 
 (defn template-fn
   "Example template-fn handler.
@@ -18,9 +21,20 @@
   (println "template-fn returning edn")
   edn)
 
+(defn cljd-init "Init clojuredart file" [opts]
+  (let [basis    (b/create-basis {:aliases [:init]})
+        cmds     (b/java-command
+                  {:basis      basis
+                   :main      'clojure.main
+                   :main-args ["-m" "cljd" "init"]})
+        {:keys [exit]} (b/process cmds)]
+    (when-not (zero? exit) (throw (ex-info "Init failed" {}))))
+  opts)
+
 (defn post-process-fn
   "Example post-process-fn handler.
 
   Can programmatically modify files in the generated project."
   [edn data]
-  (println "post-process-fn not modifying" (:target-dir data)))
+  cljd-init
+)
