@@ -1,5 +1,7 @@
 # clojuredart-greg/cli
 
+*Warning: non-functional, don't use*
+
 A deps.edn template to generate a clojuredart cli app
 
 ## Usage
