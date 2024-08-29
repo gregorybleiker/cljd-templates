@@ -21,20 +21,21 @@
   (println "template-fn returning edn")
   edn)
 
-(defn cljd-init "Init clojuredart file" [opts]
-  (let [basis    (b/create-basis {:aliases [:init]})
+(defn cljd-init [target-dir]
+  "Init clojuredart file"
+  (let [basis    (b/create-basis {:aliases [:build] :dir target-dir} )
         cmds     (b/java-command
                   {:basis      basis
                    :main      'clojure.main
-                   :main-args ["-m" "cljd" "init"]})
+                   :main-args ["-m" "cljd.build" "init"]})
         {:keys [exit]} (b/process cmds)]
-    (when-not (zero? exit) (throw (ex-info "Init failed" {}))))
-  opts)
+    (println exit)
+    (when-not (zero? exit) (throw (ex-info "Init failed" {})))))
 
 (defn post-process-fn
   "Example post-process-fn handler.
 
   Can programmatically modify files in the generated project."
   [edn data]
-  cljd-init
+  (cljd-init (:target-dir data))
 )
