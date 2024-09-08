@@ -2,6 +2,12 @@
 
 {{description}}
 
+## Getting started
+
+Run `dart run` to start the program.
+
+To create an executable, run `dart compile exe -o {{raw-name}} bin/{{raw-name}}.dart`
+
 ## Usage
 
 FIXME: write usage documentation!

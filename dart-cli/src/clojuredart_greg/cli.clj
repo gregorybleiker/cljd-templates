@@ -49,7 +49,23 @@
                    :main-args ["-m" "cljd.build" "upgrade"]})
         {:keys [exit]} (b/process
                         (assoc cmds :dir target-dir))]
-    (when-not (zero? exit) (throw (ex-info "Init failed" {})))))
+    (when-not (zero? exit) (throw (ex-info "Upgrade failed" {})))))
+
+(defn cljd-compile [target-dir]
+  "Init clojuredart file"
+  (let [basis    (b/create-basis {:aliases [:build]
+                                  :root (str "./" target-dir "/deps.edn")
+                                  :dir (str "./" target-dir)
+                                  })
+        cmds     (b/java-command
+                  {:basis      basis
+                   :dir target-dir
+                   :main      'clojure.main
+                   :main-args ["-m" "cljd.build" "compile"]})
+        {:keys [exit]} (b/process
+                        (assoc cmds :dir target-dir))]
+    (when-not (zero? exit) (throw (ex-info "Compile failed" {})))))
+
 
 (defn post-process-fn
   "Example post-process-fn handler.
@@ -58,4 +74,5 @@
   [edn data]
   (cljd-init (:target-dir data))
   (cljd-upgrade (:target-dir data))
+  (cljd-compile (:target-dir data))
 )
