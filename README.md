@@ -4,13 +4,13 @@
 
 A deps.edn template to generate a clojuredart cli app
 
+## Prerequisites
+
+Will only work with clojure > 1.12. Might work with earlier versions, but you have to figure out how yourself.
+
 ## Usage
 
-
 This is a template project for use with [deps-new](https://github.com/seancorfield/deps-new).
-As originally generated, it will produce a new library project when run:
-
-    $ clojure -Sdeps '{:deps {net.clojars.clojuredart-greg/cli {:local/root "."}}}' -Tnew create :template clojuredart-greg/cli :name myusername/mycoollib
 
 Assuming you have installed `deps-new` as your `new` "tool" via:
 
@@ -18,7 +18,16 @@ Assuming you have installed `deps-new` as your `new` "tool" via:
 clojure -Ttools install-latest :lib io.github.seancorfield/deps-new :as new
 ```
 
-> Note: once the template has been published (to a public git repo), the invocation will be the same, except the `:local/root` dependency will be replaced by a git coordinate.
+With this repo cloned, you can `cd` into the cloned directory and run:
+
+    $ clojure -Sdeps '{:deps {net.clojars.clojuredart-greg/cli {:local/root "."}}}' -Tnew create :template clojuredart-greg/cli :name myusername/mycoollib
+
+Without cloning, you can run
+
+    $ clojure -Tnew create :template com.github.gregorybleiker/cljd-templates%clojuredart-greg/cli :name myusername/mycoollib
+
+Sample invocations are in `run.sh` and `run_git.sh`
+
 
 Run this template project's tests (by default, this just validates your template's `template.edn`
 file -- that it is valid EDN and it satisfies the `deps-new` Spec for template files):
