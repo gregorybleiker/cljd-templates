@@ -17,3 +17,5 @@ RUN flutter doctor
 RUN flutter channel master
 RUN flutter upgrade
 RUN flutter config --enable-web
+
+# something like this : clj -M:cljd flutter -d web-server --web-port=1234
