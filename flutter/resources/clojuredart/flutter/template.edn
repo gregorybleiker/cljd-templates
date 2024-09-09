@@ -1,0 +1,16 @@
+{:description "Generates a simple flutter app"
+ ;; this does not transform the data but does print a message:
+ :data-fn clojuredart.flutter/data-fn
+ ;; this does not transform the EDN but does print a message:
+ :template-fn clojuredart.flutter/template-fn
+ ;; this does not post-process the project but does print a message:
+ :post-process-fn clojuredart.flutter/post-process-fn
+ :transform
+ [["build" ""
+   {"build.tmpl" "build.clj"
+    "deps.tmpl"  "deps.edn"}
+   :only]
+  ["src" "src/{{top/file}}"
+   {"main.tmpl" "{{main/file}}.cljd"}]
+  ["test" "test/{{top/file}}"
+   {"main_test.tmpl" "{{main/file}}_test.clj"}]]}
