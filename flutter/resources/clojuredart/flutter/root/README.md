@@ -4,7 +4,7 @@
 
 ## Getting started
 
-Run `clj -M:cljd flutter` to start the program.
+Run `clj -M:cljd flutter -d chrome` to start the program (choose another device if necessary).
 
 To create an executable, run `dart compile exe -o {{raw-name}} bin/{{raw-name}}.dart`
 
