@@ -1,4 +1,4 @@
-# clojuredart-greg/cli
+# clojuredart/cli
 
 *Warning: non-functional, don't use*
 
@@ -20,11 +20,11 @@ clojure -Ttools install-latest :lib io.github.seancorfield/deps-new :as new
 
 With this repo cloned, you can `cd` into the cloned directory and run:
 
-    $ clojure -Sdeps '{:deps {net.clojars.clojuredart-greg/cli {:local/root "."}}}' -Tnew create :template clojuredart-greg/cli :name myusername/mycoollib
+    $ clojure -Sdeps '{:deps {net.clojars.clojuredart/cli {:local/root "."}}}' -Tnew create :template clojuredart/cli :name myusername/mycoollib
 
 Without cloning, you can run
 
-    $ clojure -Tnew create :template com.github.gregorybleiker/cljd-templates%clojuredart-greg/cli :name myusername/mycoollib
+    $ clojure -Tnew create :template com.github.gregorybleiker/cljd-templates%clojuredart/cli :name myusername/mycoollib
 
 Sample invocations are in `run.sh` and `run_git.sh`
 

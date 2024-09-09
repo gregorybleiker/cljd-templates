@@ -1,10 +1,10 @@
 {:description "Generates a simple clojuredart CLI app"
  ;; this does not transform the data but does print a message:
- :data-fn clojuredart-greg.cli/data-fn
+ :data-fn clojuredart.cli/data-fn
  ;; this does not transform the EDN but does print a message:
- :template-fn clojuredart-greg.cli/template-fn
+ :template-fn clojuredart.cli/template-fn
  ;; this does not post-process the project but does print a message:
- :post-process-fn clojuredart-greg.cli/post-process-fn
+ :post-process-fn clojuredart.cli/post-process-fn
  :transform
  [["build" ""
    {"build.tmpl" "build.clj"

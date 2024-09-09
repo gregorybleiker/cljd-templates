@@ -1,2 +1,2 @@
 #!/bin/sh
-clojure -Tnew create :template com.github.gregorybleiker/cljd-templates%clojuredart-greg/cli :name myusername/mycoollib
+clojure -Tnew create :template com.github.gregorybleiker/cljd-templates%clojuredart/cli :name user/cli-app

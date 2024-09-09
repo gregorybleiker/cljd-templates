@@ -2,7 +2,7 @@
   (:refer-clojure :exclude [test])
   (:require [clojure.tools.build.api :as b]))
 
-(def lib 'blabla.clojuredart-greg/cli)
+(def lib 'clojuredart/cli)
 (def version "0.1.0-SNAPSHOT")
 #_ ; alternatively, use MAJOR.MINOR.COMMITS:
 (def version (format "1.0.%s" (b/git-count-revs nil)))

@@ -14,7 +14,7 @@
    }
   :build {:deps {io.github.clojure/tools.build
                  {:mvn/version "0.10.5"}
-                 tensegritics/clojuredar
+                 tensegritics/clojuredart
                  {:git/url "https://github.com/tensegritics/ClojureDart.git"
                   :sha "91e1074bd2e912c95bbb692120ccf44b8d08aa4a"}}
           :ns-default build
