@@ -4,17 +4,13 @@
 ))
 
 (defn data-fn
-     "Example data-fn handler.
-
-  Result is merged onto existing options data."
+     "Empty data fn"
      [data]
      ;; returning nil means no changes to options data
      nil)
 
 (defn template-fn
-     "Example template-fn handler.
-
-  Result is used as the EDN for the template."
+     "Empty template fn"
      [edn data]
      ;; must return the whole EDN hash map
      edn)
@@ -66,9 +62,7 @@
 
 
 (defn post-process-fn
-  "Example post-process-fn handler.
-
-  Can programmatically modify files in the generated project."
+  "run init, upgrade and compile on created project"
   [edn data]
   (cljd-init (:target-dir data))
   (cljd-upgrade (:target-dir data))
