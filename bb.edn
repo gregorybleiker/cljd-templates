@@ -1,0 +1,9 @@
+{:deps {io.github.lispyclouds/bblgum {:git/sha "1d4de3d49b84f64d1b71930fa1161f8d2622a4d9"}}
+ :paths ["."]
+ :tasks
+ {create {
+          :task (c/choose)
+          :requires ([cdcli :as c])
+          }
+  }
+ }
