@@ -4,7 +4,7 @@ Templates and Dockerfiles for building clojuredart projects with deps-new
 
 ## Prerequisites
 
-You need clojure already installed on your system.
+You need `clojure` and `dart` installed on your system.
 To run the guided setup, you need to install (babashka)[https://github.com/babashka/babashka] and (gum)[https://github.com/charmbracelet/gum].
 If you are developing a flutter app, you need the tooling installed to build the flutter app (eg. android sdk)
 
