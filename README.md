@@ -5,8 +5,9 @@ Templates and Dockerfiles for building clojuredart projects with deps-new
 ## Prerequisites
 
 You need `clojure` and `dart` installed on your system.
-To run the guided setup, you need to install (babashka)[https://github.com/babashka/babashka] and (gum)[https://github.com/charmbracelet/gum].
-If you are developing a flutter app, you need the tooling installed to build the flutter app (eg. android sdk)
+- To run the guided setup, you need to install (babashka)[https://github.com/babashka/babashka] and (gum)[https://github.com/charmbracelet/gum].
+- If you are developing a flutter app, you need the tooling installed to build the flutter app (eg. android sdk)
+- If you want to use docker, this repo samples are using podman, but you could easily change to docker
 
 ## Getting Started
 
@@ -39,6 +40,19 @@ or (nicer to my mind)
 Sample invocations are in `run.sh` and `run_git.sh`
 
 ### Docker
+
+You can also run the app in a docker container:
+
+First build the container with `build_docker_cli.sh`
+
+Then
+- Create a `work` directory
+- Run `run_docker_cli.sh`
+
+This will create the app in the `work` directory
+
+If you want to run all commands in the container, run `dev_docker_cli.sh` instead of `run_docker_cli.sh`. This will keep the container running and you'll be dropped into a shell in the container. Go into `/work/cli-app` and run `dart run`.
+
 
 
 # References
