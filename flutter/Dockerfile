@@ -12,8 +12,6 @@ RUN clojure -Ttools install-latest :lib io.github.seancorfield/deps-new :as new
 COPY flutter /flutter
 COPY flutter/entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT /entrypoint.sh
-
 # download Flutter SDK from Flutter Github repo
 RUN git clone https://github.com/flutter/flutter.git /usr/local/flutter
 
