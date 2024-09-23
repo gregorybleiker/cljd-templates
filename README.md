@@ -18,7 +18,7 @@ The easiest way to get something running if you have all prerequisites installed
 
     $ bb create
 
-If you have clojure installed, you need to run
+If you have clojure installed, you need to run (only once to instal
 
     $ clojure -Ttools install-latest :lib io.github.seancorfield/deps-new :as new
 
@@ -31,6 +31,10 @@ Replace <user> and <cli_app> to your likings.
 Alternatively, you can clone this repo, `cd` into the cloned directory and run:
 
     $ clojure -Sdeps '{:deps {net.clojars.clojuredart/cli {:local/root "."}}}' -Tnew create :template clojuredart/cli :name <user>/<cli_app>
+
+or (nicer to my mind)
+
+    $ clj -M:new create --template com.github.gregorybleiker/cljd-templates%clojuredart/cli --name <user>/<cli_app>
 
 Sample invocations are in `run.sh` and `run_git.sh`
 
