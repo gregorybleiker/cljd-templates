@@ -2,26 +2,40 @@
 
 Templates and Dockerfiles for building clojuredart projects with deps-new
 
+There are two flavours:
+- pure dart (cli)
+- flutter (UI)
+
 ## Prerequisites
 
+Scripts are all for Linux systems. Windows is currently not supported.
+
 You need `clojure` and `dart` installed on your system.
-- To run the guided setup, you need to install (babashka)[https://github.com/babashka/babashka] and (gum)[https://github.com/charmbracelet/gum].
-- If you are developing a flutter app, you need the tooling installed to build the flutter app (eg. android sdk)
-- If you want to use docker, this repo samples are using podman, but you could easily change to docker
+
+You need to run (only once)
+
+    $ clojure -Ttools install-latest :lib io.github.seancorfield/deps-new :as new
+
+### Optional (highly recommended)
+
+- (babashka)[https://github.com/babashka/babashka]
+- To run the guided setup, you need to install  and (gum)[https://github.com/charmbracelet/gum].
+
+### Flutter
+If you are developing a flutter app, you need the tooling installed to build the flutter app (eg. android sdk)
+
+### Docker
+If you plan on using containers for creation or development, this repo samples are using podman, but you could easily change to docker. Just replace `podman` with `docker` in the samples. You need to install the container runtime and tooling yourself.
 
 ## Getting Started
 
-There are two ways to use the templates. Either for local development, which assumes that everything is going to run on your local machine. This requires all dependencies to be setup correctly. You can also run the templates through a docker container. You can either just generate the files through the tooling in the container or also run the whole application inside a container, in which case you need nearly no local setup, but the setup for development and debugging is more challenging.
+### Native (no containers)
 
-### Local
+Everything is going to run on your local machine. This requires all dependencies to be setup correctly.
 
 The easiest way to get something running if you have all prerequisites installed, is
 
     $ bb create
-
-If you have clojure installed, you need to run (only once to instal
-
-    $ clojure -Ttools install-latest :lib io.github.seancorfield/deps-new :as new
 
 Without cloning, you can run
 
@@ -39,11 +53,11 @@ or (nicer to my mind)
 
 Sample invocations are in `run.sh` and `run_git.sh`
 
-### Docker
+### Containers
 
-You can also run the app in a docker container:
+You can use containers to generate your project structure (and the continue down the native path (see above). Or you can also run the application inside of a container, which will have all requirements installed inside the container. At the moment, only flutter web development and dart/cli is supported.
 
-First build the container with `build_docker_cli.sh`
+Build the container with `build_docker_cli.sh`
 
 Then
 - Create a `work` directory

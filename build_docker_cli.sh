@@ -1,3 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-podman build -f dart-cli/Dockerfile -t dartcli .
+cmd=docker
+if [[ $(command -v podman) ]]
+then
+    echo "using podman"
+    cmd=podman
+elif [[ $(command -v docker) ]]
+then
+    echo "using docker"
+else
+    echo "no container runtime found"
+    exit -1
+fi
+
+$cmd build -f dart-cli/Dockerfile -t dartcli .
