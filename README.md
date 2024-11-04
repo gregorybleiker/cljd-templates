@@ -12,14 +12,14 @@ Scripts are all for Linux systems. Windows is currently not supported.
 
 You need `clojure` and `dart` installed on your system.
 
-You need to run (only once)
+Run (only once):
 
     $ clojure -Ttools install-latest :lib io.github.seancorfield/deps-new :as new
 
 ### Optional (highly recommended)
 
-- (babashka)[https://github.com/babashka/babashka]
-- To run the guided setup, you need to install  and (gum)[https://github.com/charmbracelet/gum].
+- [babashka](https://github.com/babashka/babashka)
+- To run the guided setup (`bb create`), you need to install  and [gum](https://github.com/charmbracelet/gum).
 
 ### Flutter
 If you are developing a flutter app, you need the tooling installed to build the flutter app (eg. android sdk)
@@ -33,7 +33,7 @@ If you plan on using containers for creation or development, this repo samples a
 
 Everything is going to run on your local machine. This requires all dependencies to be setup correctly.
 
-The easiest way to get something running if you have all prerequisites installed, is
+The easiest way to get something running is to clone this repo, install the [optional dependencies](###optional-(highly-recommended)) and run:
 
     $ bb create
 
