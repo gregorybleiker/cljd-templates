@@ -33,7 +33,7 @@ If you plan on using containers for creation or development, this repo samples a
 
 Everything is going to run on your local machine. This requires all dependencies to be setup correctly.
 
-The easiest way to get something running is to clone this repo, install the [optional dependencies](###optional-(highly-recommended)) and run:
+The easiest way to get something running is to clone this repo, install the [optional dependencies](#optional-highly-recommended) and run:
 
     $ bb create
 
