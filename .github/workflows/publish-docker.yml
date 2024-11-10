@@ -4,7 +4,8 @@ name: publish cljd-templates-flutter
 # Configures this workflow to run every time a change is pushed to the branch called `release`.
 on:
   push:
-      branches: ['release']
+      tags:
+        - v0.*
   workflow_dispatch:
     types:
       - build
