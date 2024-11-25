@@ -24,8 +24,6 @@ Run (only once):
 ### Flutter
 If you are developing a flutter app, you need the tooling installed to build the flutter app (eg. android sdk)
 
-### Docker
-If you plan on using containers for creation or development, this repo samples are using podman, but you could easily change to docker. Just replace `podman` with `docker` in the samples. You need to install the container runtime and tooling yourself.
 
 ## Getting Started
 
@@ -37,25 +35,13 @@ The easiest way to get something running is to clone this repo, install the [opt
 
     $ bb create
 
-Without cloning, you can run
+Sample invocations with `clojure` are in `run*.sh`.
 
-    $ clojure -Tnew create :template com.github.gregorybleiker/cljd-templates%dart-cli%clojuredart/cli :name <user>/<cli_app>
-
-Replace <user> and <cli_app> to your likings.
-
-Alternatively, you can clone this repo, `cd` into the cloned directory and run:
-
-    $ clojure -Sdeps '{:deps {net.clojars.clojuredart/cli {:local/root "./dart-cli"}}}' -Tnew create :template clojuredart/cli :name <user>/<cli_app>
-
-or (nicer to my mind)
-
-    $ clj -M:new create --template com.github.gregorybleiker/cljd-templates%dart-cli%clojuredart/cli --name <user>/<cli_app>
-
-Sample invocations are in `run.sh` and `run_git.sh`
-
-### Containers
-
+### Containers (WIP)
 You can use containers to generate your project structure (and the continue down the native path (see above). Or you can also run the application inside of a container, which will have all requirements installed inside the container. At the moment, only flutter web development and dart/cli is supported.
+
+#### Docker
+If you plan on using containers for creation or development, you need some kind of container runtime. This repo uses `podman` by default and tries to fallback to `docker` in the samples. You need to install the container runtime and tooling yourself.
 
 Build the container with `build_docker_cli.sh`
 
@@ -66,7 +52,6 @@ Then
 This will create the app in the `work` directory
 
 If you want to run all commands in the container, run `dev_docker_cli.sh` instead of `run_docker_cli.sh`. This will keep the container running and you'll be dropped into a shell in the container. Go into `/work/cli-app` and run `dart run`.
-
 
 
 # References

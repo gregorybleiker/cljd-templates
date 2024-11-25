@@ -23,6 +23,13 @@
 *.jar
 *.swp
 *~
+.darttool
 /checkouts
 /classes
 /target
+/ios
+/android
+/windows
+/web
+/linux
+/macos
