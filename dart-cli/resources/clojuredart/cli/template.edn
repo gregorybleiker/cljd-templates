@@ -10,6 +10,9 @@
    {"build.tmpl" "build.clj"
     "deps.tmpl"  "deps.edn"}
    :only]
+  ["root" ""
+   {"README.md"  "README_{{main}}.md"}
+  :only]
   ["src" "src/{{top/file}}"
    {"main.tmpl" "{{main/file}}.cljd"}]
   ["test" "test/{{top/file}}"

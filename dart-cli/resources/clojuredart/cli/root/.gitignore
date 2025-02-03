@@ -1,6 +1,7 @@
 .calva/output-window/
 .classpath
 .clj-kondo/.cache
+.clojuredart
 .cpcache
 .eastwood
 .factorypath
@@ -23,7 +24,9 @@
 *.jar
 *.swp
 *~
-.darttool
+.dart_tool
+/lib/cljd-out
+/test/cljd-out
 /checkouts
 /classes
 /target

@@ -55,12 +55,12 @@
                         (assoc cmds :dir target-dir))]
     (when-not (zero? exit) (throw (ex-info "Compile failed" {})))))
 
-(defn git-init [target-dir]
+(defn git-init [source-dir target-dir]
   "Init git repository"
   (do (b/git-process
        {:git-args "init --initial-branch=main"
         :dir target-dir})
-      (b/copy-file {:src (str "./" ".gitignore") :target target-dir})
+      (b/copy-file {:src (str source-dir "/root/.gitignore") :target (str target-dir "/.gitignore") })
       (b/git-process
        {:git-args "add ."
         :dir target-dir})
@@ -74,4 +74,4 @@
   (cljd-init (:target-dir data))
 ;  (cljd-upgrade (:target-dir data))
 ;  (cljd-compile (:target-dir data))
-  (git-init (:target-dir data)))
+  (git-init (:template-dir data)  (:target-dir data)))
