@@ -66,7 +66,7 @@
         :dir target-dir})
       (b/git-process
        {:git-args ["commit", "-m", "Initial commit"]
-        :dir target-dir})))
+        :dir target-dir}))))
 
 (defn post-process-fn
   "run init, upgrade and compile on created project"
