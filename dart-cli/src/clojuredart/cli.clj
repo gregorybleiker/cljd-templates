@@ -60,6 +60,7 @@
   (do (b/git-process
        {:git-args "init --initial-branch=main"
         :dir target-dir})
+      (b/copy-file {:src (str "./" ".gitignore)" :target target-dir})
       (b/git-process
        {:git-args "add ."
         :dir target-dir})
