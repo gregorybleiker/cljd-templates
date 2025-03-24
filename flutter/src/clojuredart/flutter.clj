@@ -1,6 +1,6 @@
 (ns clojuredart.flutter
   (:require [clojure.tools.build.api :as b]
-                                        ;  [deps-deploy.deps-deploy :as dd])
+            [utils.commands :as c]
             ))
 
 (defn data-fn
@@ -15,41 +15,10 @@
   ;; must return the whole EDN hash map
   edn)
 
-(defn cljd-init [target-dir]
-  "Init clojuredart file"
-
-  (-> (b/process {:command-args ["clj" "-M:cljd" "init"]
-                  :dir (str "./" target-dir)
-                  :out
-                  :capture })
-      :out
-      println
-      ))
-
-(defn cljd-upgrade [target-dir]
-  "Init clojuredart file"
-  (-> (b/process {:command-args ["clj" "-M:cljd" "upgrade"]
-                  :dir (str "./" target-dir)
-                  :out
-                  :capture })
-      :out
-      println
-      ))
-
-(defn cljd-compile [target-dir]
-  "Init clojuredart file"
-  (-> (b/process {:command-args ["clj" "-M:cljd" "compile"]
-                  :dir (str "./" target-dir)
-                  :out
-                  :capture })
-      :out
-      println))
-
-
 (defn post-process-fn
   "run init, upgrade and compile on created project"
   [edn data]
-  (cljd-init (:target-dir data))
-  (cljd-upgrade (:target-dir data))
-  (cljd-compile (:target-dir data))
-  )
+  (c/cljd-init (:target-dir data))
+  (c/cljd-upgrade (:target-dir data))
+  (c/cljd-compile (:target-dir data))
+  (c/git-init (:template-dir data)  (:target-dir data)))
