@@ -1,5 +1,6 @@
 {:aliases {
-           :new {:deps {org.babashka/cli {:mvn/version "0.8.60"}
+           :new {:deps {io.github.clojure/tools.build {:mvn/version "0.10.7"}
+                        org.babashka/cli {:mvn/version "0.8.62"}
                         io.github.seancorfield/deps-new {:git/tag "v0.8.0"
                                                          :git/sha "2f96530"}}
                  :ns-default org.corfield.new
