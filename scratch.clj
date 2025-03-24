@@ -16,3 +16,7 @@
         {:keys [exit out err]} (b/process
                         (assoc cmds :dir target-dir))]
     (when-not (zero? exit) (throw (ex-info (str "Upgrade failed -" cmds "-" err "-") {})))))
+
+(defn cljd []
+ (b/process {:command-args ["clj" "-M:cljd" "init"]})
+  )
